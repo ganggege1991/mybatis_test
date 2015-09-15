@@ -2,6 +2,7 @@ package testmybatis2.inter;
 
 import java.util.List;
 
+import testmybatis2.model.Article;
 import testmybatis2.model.User;
 
 /**
@@ -34,4 +35,20 @@ public interface IUserOperation {
 	 * @param user
 	 */
 	void addUser(User user);
+	/**
+	 * 修改用户
+	 * @param user
+	 */
+	void updateUser(User user);
+	/**
+	 * 删除User
+	 * @param id 主键
+	 */
+	void deleteUser(int id);
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
+	List<Article> getUserArticles(int id);
 }

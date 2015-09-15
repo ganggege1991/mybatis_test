@@ -13,16 +13,34 @@
 	<resultMap type="User" id="resultListUser">
 		<id column="id" property="id" />
 		<result column="userName" property="userName" />
-		<result column="userAge" property="userAge"/>
+		<result column="userAge" property="userAge" />
 		<result column="userAddress" property="userAddress" />
 	</resultMap>
+
+	<!-- User 联合文章进行查询 方法之二的配置 (多对一的方式) -->
+	<resultMap id="resultUserArticleList" type="Article">
+		<id property="id" column="aid" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<association property="user" javaType="User" resultMap="resultListUser" />
+	</resultMap>
+
+	<select id="getUserArticles" parameterType="int"
+		resultMap="resultUserArticleList">
+		select user.id,user.userName,user.userAddress,article.id
+		aid,article.title,article.content from user,article
+		where user.id=article.userid and user.id=#{id}
+	</select>
+
+
+
 
 	<!-- 返回list 的select parameterType,参数类型 语句，注意 resultMap 的值是指向前面定义好的 -->
 	<select id="selectUsers" parameterType="string" resultMap="resultListUser">
 		select * from user where userName like #{userName}
 	</select>
 
-	
+
 
 
 	<!--执行增加操作的SQL语句。id和parameterType 分别与IUserOperation接口中的addUser方法的名字和 参数类型一致。以#{name}的形式引用Student参数 
@@ -33,4 +51,17 @@
 		insert into user(userName,userAge,userAddress)
 		values(#{userName},#{userAge},#{userAddress})
 	</insert>
+
+	<!-- 修改 id与接口中的方法名一致 -->
+	<update id="updateUser" parameterType="User">
+		update user set
+		userName=#{userName},userAge=#{userAge},userAddress=#{userAddress}
+		where id=#{id}
+	</update>
+
+
+	<!-- 删除 id与接口中的方法名一致 -->
+	<delete id="deleteUser" parameterType="int">
+		delete from user where id=#{id}
+	</delete>
 </mapper>

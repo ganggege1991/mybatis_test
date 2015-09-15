@@ -3,9 +3,9 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias alias="User" type="testmybatis2.model.User" />
-		<typeAlias alias="Article" type="testmybatis2.model.Article" />
+		<typeAlias alias="User" type="com.testmybatis.model.User" />
 	</typeAliases>
+
 	<environments default="development">
 		<environment id="development">
 			<transactionManager type="JDBC" />
@@ -19,6 +19,6 @@
 	</environments>
 
 	<mappers>
-		<mapper resource="testmybatis2/model/User.xml" />
+		<mapper resource="com/testmybatis/map/UserMapper.xml" />
 	</mappers>
 </configuration>

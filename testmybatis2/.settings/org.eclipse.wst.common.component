@@ -5,6 +5,10 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src_user"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/test_src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/util"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/dao"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/test"/>
         <property name="context-root" value="testmybatis2"/>
         <property name="java-output-path" value="/testmybatis2/target/classes"/>
     </wb-module>
