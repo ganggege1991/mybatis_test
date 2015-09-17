@@ -43,6 +43,10 @@ public class UserTest {
 			//
 			UserMapper userOperation = session.getMapper(UserMapper.class);
 			
+			
+			System.out.println(userOperation.getUserArticles(1));
+			
+			
 			UserExample userExample = new UserExample();
 			Criteria c = userExample.createCriteria();
 			c.andUsernameEqualTo("·ÉÄñ");

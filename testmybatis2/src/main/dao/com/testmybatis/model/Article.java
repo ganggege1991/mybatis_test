@@ -1,4 +1,4 @@
-package testmybatis2.model;
+package com.testmybatis.model;
 
 public class Article {
 
@@ -38,5 +38,11 @@ public class Article {
 	public void setContent(String content) {
 		this.content = content;
 	}
+
+	@Override
+	public String toString() {
+		return "Article [id=" + id + ", user=" + user + ", title=" + title + ", content=" + content + "]";
+	}
+	
 
 }
