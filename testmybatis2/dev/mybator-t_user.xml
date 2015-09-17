@@ -4,14 +4,16 @@
   "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
+<!-- 驱动，绝对路径 -->
 	<classPathEntry
 		location="D:/git/mybatis_test/testmybatis2/target/testmybatis2/WEB-INF/lib/mysql-connector-java-5.1.36.jar" />
-	<context id="mobilecampus" targetRuntime="MyBatis3">
-
+	
+	<context id="generator" targetRuntime="MyBatis3">
+		<!-- 链接数据库的配置 -->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
 			connectionURL="jdbc:mysql://127.0.0.1:3306/test" userId="root"
 			password="root" />
-
+<!--  -->
 		<javaTypeResolver>
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>

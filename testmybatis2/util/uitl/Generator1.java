@@ -8,13 +8,18 @@ import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.Configuration;
 import org.mybatis.generator.config.xml.ConfigurationParser;
 import org.mybatis.generator.internal.DefaultShellCallback;
-
+/**
+ * 覆盖之前的生成的文件！
+ * @author Administrator
+ *
+ */
 public class Generator1 {
 	
 	public void generatorOneFile(final String fileName,final String dir) throws Exception {
 		
 		File[] files = new File(dir).listFiles(new FileFilter() {
 			public boolean accept(File file) {
+				//读取mybator-*.xml的文件
 				return file.isFile() && file.getName().equalsIgnoreCase("mybator-" + fileName + ".xml");
 			}
 		});
@@ -39,6 +44,7 @@ public class Generator1 {
 	public static void main(String[] args) {
 		Generator1 generator1 = new Generator1();
 		try {
+			//这个路径，需要改一改。
 			generator1.generatorOneFile("t_user", "D:\\git\\mybatis_test\\testmybatis2\\dev");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

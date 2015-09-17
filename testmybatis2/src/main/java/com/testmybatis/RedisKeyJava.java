@@ -1,6 +1,5 @@
 package com.testmybatis;
 
-import java.util.List;
 import java.util.Set;
 
 import redis.clients.jedis.Jedis;
