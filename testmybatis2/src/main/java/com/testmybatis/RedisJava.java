@@ -1,9 +1,10 @@
 package com.testmybatis;
 
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.ShardedJedis;
 
 /**
- * ѧϰredis
+ * 
  * 
  * @author hegang
  * @date 2015-09-17
